@@ -2,8 +2,6 @@
 
 This is the .vim directory and config that I use.
 
-* 2.0
-
 ### How do I get set up? ###
 
 cd $HOME
