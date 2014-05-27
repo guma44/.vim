@@ -15,7 +15,7 @@ ln -s .vim/vimrc .vimrc
 mkdir ~/tmp
 mkdir ~/.vimundo
 
-### Don't forget to change the info for the templates ###
+### Don't forget to change the info for the templates in ~/.vim/vimrc ###
 
 let g:email = "your email"
 
