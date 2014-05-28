@@ -617,4 +617,32 @@ parser.add_argument("--$1",
                     help="$2")
 endsnippet
 
+snippet deftask "Ruffus pipeline task for submit" b
+def ${1:function}(`!p
+if snip.indent:
+	snip.rv = 'self' + (", " if len(t[2]) else "")`${2:arg1}):
+	`!p snip.rv = triple_quotes(snip)`${4:@todo: Docstring for $1.}`!p
+snip.rv = ""
+snip >> 1
+
+args = get_args(t[2])
+if args:
+	write_docstring_args(args, snip)
+
+style = get_style(snip)
+snip += format_return(style)
+snip.rv += '\n' + snip.mkline('', indent='')
+snip += triple_quotes(snip) `
+	statement = "${0:statement}"
+
+	run_params = P.get_run_options(params, "$1")
+    try:
+        stdout, stderr = P.run(statement, logger=logger, session=drmaa_session, **run_params)
+        logger.info("STDERR for $1:\t %s" % "".join(stderr))
+    except P.DRMAAException, e:
+        logger.log(logging.ERROR, "$1 for %s unsuccessful!" % `!p snip.rv=get_args(t[2])[0]`)
+        logger.log(logging.ERROR, "%s" % str(e))
+        raise JobSignalledBreak("DRMAA session ended with error - see the log file for details!")
+endsnippet
+
 # vim:ft=snippets:
