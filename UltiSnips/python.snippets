@@ -584,6 +584,7 @@ endsnippet
 snippet adds "Add string argument to parser" b
 parser.add_argument("--$1",
                     dest="`!p snip.rv = t[1].replace("-", "_")`",
+                    required=True,
                     help="$2")
 endsnippet
 
@@ -598,6 +599,7 @@ snippet addi "Add int argument to parser" b
 parser.add_argument("--$1",
                     dest="`!p snip.rv = t[1].replace("-", "_")`",
                     type=int,
+                    required=True,
                     help="$2")
 endsnippet
 
