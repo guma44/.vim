@@ -11,9 +11,9 @@ __license__ = "%LICENSE%"
 # imports
 import sys
 import time
-from argparse import ArgumentParser
+from argparse import ArgumentParser, RawTextHelpFormatter
 
-parser = ArgumentParser(description=__doc__)
+parser = ArgumentParser(description=__doc__, formatter_class=RawTextHelpFormatter)
 parser.add_argument("-v",
                     "--verbose",
                     dest="verbose",
