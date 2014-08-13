@@ -49,6 +49,14 @@ endif
 autocmd BufRead,BufNewFile *.fasta,*.fa set filetype=fasta
 autocmd BufRead,BufNewFile *.bed,*.tsv,*.tab,*.asmbed :RainbowTab
 
+"Start in the last position when opening a file
+if has("autocmd")
+   augroup LastPos
+   au!
+   autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |  exe "normal g`\"" | endif
+   augroup END
+endif
+
 
 " set solarized colorscheme
 set t_Co=256
