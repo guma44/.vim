@@ -1,3 +1,3 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/rgumienny/.vim/bundle/rainbow_csv/autoload'
+let g:netrw_dirhist_1='/import/bc2/home/zavolan/gumiennr/Pipelines/Testing/pipeline_MIRZA_tests/test'
