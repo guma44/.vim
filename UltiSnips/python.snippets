@@ -619,6 +619,43 @@ parser.add_argument("--$1",
                     help="$2")
 endsnippet
 
+snippet inout "Insert input and output arguments" b
+parser.add_argument("--input",
+                    dest="input",
+                    required=True,
+                    help="Input file in $1 format.")
+parser.add_argument("--output",
+                    dest="output",
+                    help="Output file in $2 format.")
+endsnippet
+
+snippet pipecode "Insert piping code" b
+try:
+    for $1 in $2:
+        pass
+except IOError as e:
+        if e.errno == errno.EPIPE:
+            pass
+endsnippet
+
+snippet pipearg "Insert pipe arg" b
+parser.add_argument("--pipe",
+                    dest="pipe",
+                    action="store_true",
+                    default=False,
+                    help="Use scripts in bash pipes.")
+endsnippet
+
+snippet pipeif "Insert pipe code with if" b
+if options.pipe:
+    try:
+        for $1 in $2:
+            pass
+    except IOError as e:
+        if e.errno == errno.EPIPE:
+            pass
+endsnippet
+
 snippet deftask "Ruffus pipeline task for submit" b
 def ${1:function}(`!p
 if snip.indent:
@@ -645,6 +682,11 @@ snip += triple_quotes(snip) `
         logger.log(logging.ERROR, "$1 for %s unsuccessful!" % `!p snip.rv=get_args(t[2])[0]`)
         logger.log(logging.ERROR, "%s" % str(e))
         raise JobSignalledBreak("DRMAA session ended with error - see the log file for details!")
+endsnippet
+
+snippet forfasta "For loop over fasta file" b
+for rec in SeqIO.parse($1, 'fasta'):
+    ${2:pass}
 endsnippet
 
 # vim:ft=snippets:
