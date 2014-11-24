@@ -3,7 +3,7 @@
 %HERE%
 """
 
-__date_ = "%DATE%"
+__date__ = "%DATE%"
 __author__ = "%USER%"
 __email__ = "%MAIL%"
 __license__ = "%LICENSE%"
@@ -40,10 +40,14 @@ if __name__ == '__main__':
         if options.verbose:
             start_time = time.time()
             start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
-            syserr("############## Started script on %s ##############\n" % start_date)
+            syserr("############## Started script on %s ##############\n" %
+                   start_date)
         main()
         if options.verbose:
-            syserr("### Successfully finished in %i seconds, on %s ###\n" % (time.time() - start_time, time.strftime("%d-%m-%Y at %H:%M:%S")))
+            syserr("### Successfully finished in %i seconds, on %s ###\n" %
+                   (time.time() - start_time,
+                    time.strftime("%d-%m-%Y at %H:%M:%S")))
     except KeyboardInterrupt:
-        syserr("Interrupted by user after %i seconds!\n" % (time.time() - start_time))
+        syserr("Interrupted by user after %i seconds!\n" %
+               (time.time() - start_time))
         sys.exit(-1)

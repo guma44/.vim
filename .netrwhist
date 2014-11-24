@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/import/bc2/home/zavolan/gumiennr/Pipelines/Testing/pipeline_MIRZA_tests/test'
+let g:netrw_dirhist_2='/import/bc2/home/zavolan/gumiennr/Pipelines/Testing/pipeline_HybridSearch_tests/test_mclip_mouse'
+let g:netrw_dirhist_3='/import/bc2/home/zavolan/gumiennr/Alex_MIRZAscan/AGO-CLIP/sample5543'
+let g:netrw_dirhist_4='/import/bc2/home/zavolan/gumiennr/virtualenvs/test/test/COSMOS-1.0/cosmos'
+let g:netrw_dirhist_5='/import/bc2/home/zavolan/gumiennr/Pipelines/Testing/pipeline_HybridSearch_tests/test_big_clusters'

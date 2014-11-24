@@ -41,3 +41,19 @@ cd bundle/
 vim vimrc 
 cd bundle/
 cd ..
+git status
+rm -rf bundle/vim-template/templates/a.py
+git add *
+git status
+git add *
+git config core.autocrlf false
+git add *
+git status
+git commit -m "Some changes in templates and snippets"
+git status
+git add .bash_history .gitignore .netrwhist 
+git status
+git commit "history and ignore"
+git commit -m "history and ignore"
+git push origin master
+cd ..
