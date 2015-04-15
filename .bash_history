@@ -57,3 +57,11 @@ git commit "history and ignore"
 git commit -m "history and ignore"
 git push origin master
 cd ..
+git status
+git add *
+git status
+git add .bash_history .netrwhist
+git status
+git commit -m "Adjust bug in __date__ field in python template and adjusted code to PEP8"
+git push origin master
+cd .

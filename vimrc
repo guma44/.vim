@@ -210,7 +210,8 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 " syntastic
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_enable_python_checker = 1
-let g:syntastic_python_checkers = ['pylint', 'pyflakes', 'pep8']
+let g:syntastic_python_checkers = ['pep8'] " ['pylint' , 'pyflakes', 'pep8']
+let g:syntastic_python_pep8_args="--max-line-length=99"
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol = "EE"  " - For syntax errors, defaults to '>>'
@@ -256,5 +257,5 @@ let g:UltiSnipsEditSplit = "horizontal"
 let g:UltiSnipsListSnippets = "<c-tab>"
 
 " snippets
-let g:ultisnips_python_style = "google"
+let g:ultisnips_python_style = "sphinx"
 

@@ -622,11 +622,12 @@ endsnippet
 snippet inout "Insert input and output arguments" b
 parser.add_argument("--input",
                     dest="input",
-                    required=True,
-                    help="Input file in $1 format.")
+                    default=sys.stdin,
+                    help="Input file in $1 format. Defaults to sys.stdin.")
 parser.add_argument("--output",
                     dest="output",
-                    help="Output file in $2 format.")
+                    default=sys.stdout,
+                    help="Output file in $2 format. Defaults to sys.stdout.")
 endsnippet
 
 snippet pipecode "Insert piping code" b
@@ -689,4 +690,57 @@ for rec in SeqIO.parse($1, 'fasta'):
     ${2:pass}
 endsnippet
 
+snippet costool "COSMOS pipeline tool" b
+class ${1:ToolName}(Tool):
+	"""
+	COSMOS Tool ${2:more}
+	"""
+	inputs = ["${3:txt}"]
+	outputs = ["${4:txt}"]
+	
+	def cmd(self, i, s, p):
+        # check if proper tags and files are supplied
+
+        #
+        # Check if there is template for particular task and if not
+        # check the general template, if there is no general one just
+        # skip this step
+        #
+        template = p.get('template', None)
+        if not template:
+            template = s.get('template', None)
+
+        #
+        # Get scripts and prepare command
+        #
+        script_path = s.get('scripts', '')
+        script_name = p.get('script', '${5:scriptname}')
+        command = """{script} \\\\
+                  """
+
+        #
+        # If there is template use it for command
+        #
+        if template and p.get('use_template', True):
+            with open(template) as tmpl:
+                template = Template(tmpl.read())
+
+            #
+            # Copy files by default to the tmp directory
+            #
+            copy_files = {}
+            moveback = {'output': "$OUT.tab"}
+
+            command_rendered = template.render(modules=p.get('modules', None),
+                                               command=command,
+                                               copy=copy_files,
+                                               moveback=moveback)
+            return str(command_rendered), {'script': os.path.join(script_path, script_name),
+                                           'output': 'output.tab',
+                                          }
+        else:
+            return str(command), {'script': os.path.join(script_path, script_name),
+                                   'output': "$OUT.tab",
+                                 }
+endsnippet
 # vim:ft=snippets:
