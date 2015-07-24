@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/import/bc2/home/zavolan/gumiennr/PythonModules/GenomeBrowser'
-let g:netrw_dirhist_2='/import/bc2/home/zavolan/gumiennr/PythonModules/GenomeBrowser/Data'
-let g:netrw_dirhist_3='/import/bc2/home/zavolan/gumiennr/HIV_project/HIV_negative_run'
-let g:netrw_dirhist_4='/import/bc2/home/zavolan/gumiennr/Pipelines/Pipelines/pipeline_snoRNASearch_snOPY/modules'
-let g:netrw_dirhist_5='/import/bc2/home/zavolan/gumiennr/Pipelines/Pipelines/pipeline_snoRNASearch_snOPY/scripts'
-let g:netrw_dirhist_6='/import/bc2/home/zavolan/gumiennr/HIV_project/HIV_negative_run/mirza'
-let g:netrw_dirhist_7='/import/bc2/home/zavolan/gumiennr/Pipelines/cosmos/MIRZA-G'
-let g:netrw_dirhist_8='/import/bc2/home/zavolan/gumiennr/Pipelines/cosmos/MIRZA-G/templates'
-let g:netrw_dirhist_9='/import/bc2/home/zavolan/gumiennr/PythonModules/jobber/jobber'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/import/bc2/home/zavolan/gumiennr/Pipelines/jobber/miRNAHybridSearch/scripts'
+let g:netrw_dirhist_2='/import/bc2/home/zavolan/gumiennr/pythonlibs/jobber/web/templates'
+let g:netrw_dirhist_3='/import/bc2/home/zavolan/GROUP/kd-mirza-project/CrossValidation/automatic_compilation_tests/mirza_weighted_likelihood/src'
+let g:netrw_dirhist_4='/import/bc2/home/zavolan/gumiennr/Pipelines/Pipelines/pipeline_snoRNASearch/scripts'

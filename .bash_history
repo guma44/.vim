@@ -65,3 +65,21 @@ git status
 git commit -m "Adjust bug in __date__ field in python template and adjusted code to PEP8"
 git push origin master
 cd .
+git status
+#git commit -am ""
+vim vimrc 
+#git commit -am "vimrc: changed to sphinx comments, pep8 only, pep8 linelength set to 99; UltiSnips: inout modification; templates: smart_open function"
+git commit -am "vimrc: changed to sphinx comments, pep8 only, pep8 linelength set to 99; UltiSnips: inout modification; templates: smart_open function"
+git push origin master 
+cd ../.bash/
+git status
+lk
+cat search_anchors.stats
+grep -i rna18s raw_reads_results.tab | wc -l
+cd ..
+cd bundle/
+la
+vim ~/.vimrc 
+ml spider r2r
+ml spider R2R
+cd ~/Soft/
