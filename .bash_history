@@ -83,3 +83,10 @@ vim ~/.vimrc
 ml spider r2r
 ml spider R2R
 cd ~/Soft/
+git status
+git add .
+git commit -am "Added vim-repeat plugin"
+git push origin master 
+screen -r jobber_server
+logout
+cd UltiSnips/

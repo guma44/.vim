@@ -1,6 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/import/bc2/home/zavolan/gumiennr/Pipelines/jobber/miRNAHybridSearch/scripts'
 let g:netrw_dirhist_2='/import/bc2/home/zavolan/gumiennr/pythonlibs/jobber/web/templates'
 let g:netrw_dirhist_3='/import/bc2/home/zavolan/GROUP/kd-mirza-project/CrossValidation/automatic_compilation_tests/mirza_weighted_likelihood/src'
 let g:netrw_dirhist_4='/import/bc2/home/zavolan/gumiennr/Pipelines/Pipelines/pipeline_snoRNASearch/scripts'
+let g:netrw_dirhist_5='/import/bc2/home/zavolan/gumiennr/pythonlibs/development/Jobber/Jobber'
+let g:netrw_dirhist_6='/import/bc2/home/zavolan/gumiennr/pythonlibs/development/Jobber/docs'
+let g:netrw_dirhist_7='/import/bc2/home/zavolan/gumiennr/Soft/snoGPS-0.2/src/squid/lib'
+let g:netrw_dirhist_8='/import/bc2/home/zavolan/gumiennr/Soft/snoGPS-0.2/src/squid'
