@@ -17,7 +17,7 @@ set autoindent                  " Indent at the same level of the previous line
 set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
 set splitright                  " Puts new vsplit windows to the right of the current
 set splitbelow                  " Puts new split windows to the bottom of the current
-set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
+set pastetoggle=<F9>           " pastetoggle (sane indentation on pastes)
 
 set backspace=indent,eol,start  " Backspace for dummies
 set background=dark         " Assume a dark background

@@ -90,3 +90,9 @@ git push origin master
 screen -r jobber_server
 logout
 cd UltiSnips/
+vim bundle/vim-template/templates/template\:.sh
+vim bundle/vim-template/templates/template\:\*.sh
+git status
+git commit -am "bash template modification"
+git push
+cd .
