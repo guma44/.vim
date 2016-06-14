@@ -96,3 +96,8 @@ git status
 git commit -am "bash template modification"
 git push
 cd .
+git status
+vim README.md 
+vim vimrc 
+git commit -am "F9 for paste switch
+cd bundle/vim-template/
