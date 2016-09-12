@@ -6,3 +6,4 @@ cd ..
 cd vim-template/
 cd rainbow_csv/
 cd ..
+cd vim-template/

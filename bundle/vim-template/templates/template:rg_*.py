@@ -24,6 +24,23 @@ parser.add_argument("-v",
 
 
 # redefine a functions for writing to stdout and stderr to save some writing
+colors = {"native": '\033[m',
+          "red": '\e[0;31m',          # Red
+          "green": '\e[0;32m',        # Green
+          "yellow": '\e[0;33m',       # Yellow
+          "blue": '\e[0;34m',         # Blue
+          "purple": '\e[0;35m',       # Purple
+          "cyan": '\e[0;36m',         # Cyan
+          "white": '\e[0;37m',        # White
+          "bred": '\e[1;31m',         # Bold Red
+          "bgreen": '\e[1;32m',       # Bold Green
+          "byellow": '\e[1;33m',      # Bold Yellow
+          "bblue": '\e[1;34m',        # Bold Blue
+          "bpurple": '\e[1;35m',      # Bold Purple
+          "bcyan": '\e[1;36m',        # Bold Cyan
+          "bwhite": '\e[1;37m',       # Bold White
+}
+
 syserr = sys.stderr.write
 sysout = sys.stdout.write
 
@@ -31,6 +48,26 @@ sysout = sys.stdout.write
 def main(options):
     """Main logic of the script"""
     pass
+
+
+def infolog(text, color=colors['bwhite']):
+    """Log info"""
+    syserr(color + text + colors['native'])
+
+
+def errorlog(text, color=colors['bred']):
+    """Log error"""
+    syserr(color + text + colors['native'])
+
+
+def successlog(text, color=colors['bgreen']):
+    """Log success"""
+    syserr(color + text + colors['native'])
+
+
+def warninglog(text, color=colors['byellow']):
+    """Log success"""
+    syserr(color + text + colors['native'])
 
 
 @contextmanager
@@ -81,14 +118,14 @@ if __name__ == '__main__':
         if options.verbose:
             start_time = time.time()
             start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
-            syserr("############## Started script on %s ##############\n" %
+            infolog("############## Started script on %s ##############\n" %
                    start_date)
         main(options)
         if options.verbose:
-            syserr("### Successfully finished in %i seconds, on %s ###\n" %
+            infolog("### Successfully finished in %i seconds, on %s ###\n" %
                    (time.time() - start_time,
                     time.strftime("%d-%m-%Y at %H:%M:%S")))
     except KeyboardInterrupt:
-        syserr("Interrupted by user after %i seconds!\n" %
+        errorlog("Interrupted by user after %i seconds!\n" %
                (time.time() - start_time))
         sys.exit(-1)

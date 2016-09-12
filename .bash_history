@@ -101,3 +101,5 @@ vim README.md
 vim vimrc 
 git commit -am "F9 for paste switch
 cd bundle/vim-template/
+git status
+cd bundle/
