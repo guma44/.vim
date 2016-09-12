@@ -152,6 +152,12 @@ def write_init_body(args, parents, snip):
 	for arg in args:
 		snip += "self._%s = %s" % (arg, arg)
 
+def get_first_letter(text):
+	if len(text) > 0:
+		return text[0]
+	else:
+		return ''
+
 
 def write_slots_args(args, snip):
 	args = ['"_%s"' % arg for arg in args]
@@ -582,21 +588,24 @@ if options.verbose:
 endsnippet
 
 snippet adds "Add string argument to parser" b
-parser.add_argument("--$1",
+parser.add_argument("-`!p snip.rv = get_first_letter(t[1])`",
+                    "--$1",
                     dest="`!p snip.rv = t[1].replace("-", "_")`",
                     required=True,
                     help="$2")
 endsnippet
 
 snippet addsd "Add string with default argument to parser" b
-parser.add_argument("--$1",
+parser.add_argument("-`!p snip.rv = get_first_letter(t[1])`",
+                    "--$1",
                     dest="`!p snip.rv = t[1].replace("-", "_")`",
                     default="$2",
                     help="$3 , defaults to $2")
 endsnippet
 
 snippet addi "Add int argument to parser" b
-parser.add_argument("--$1",
+parser.add_argument("-`!p snip.rv = get_first_letter(t[1])`",
+                    "--$1",
                     dest="`!p snip.rv = t[1].replace("-", "_")`",
                     type=int,
                     required=True,
@@ -604,7 +613,8 @@ parser.add_argument("--$1",
 endsnippet
 
 snippet addid "Add int with default argument to parser" b
-parser.add_argument("--$1",
+parser.add_argument("-`!p snip.rv = get_first_letter(t[1])`",
+                    "--$1",
                     dest="`!p snip.rv = t[1].replace("-", "_")`",
                     type=int,
                     default=$2,
@@ -612,7 +622,8 @@ parser.add_argument("--$1",
 endsnippet
 
 snippet addb "Add boolean switch to parser" b
-parser.add_argument("--$1",
+parser.add_argument("-`!p snip.rv = get_first_letter(t[1])`",
+                    "--$1",
                     dest="`!p snip.rv = t[1].replace("-", "_")`",
                     action="store_true",
                     default=False,
@@ -620,11 +631,13 @@ parser.add_argument("--$1",
 endsnippet
 
 snippet inout "Insert input and output arguments" b
-parser.add_argument("--input",
+parser.add_argument("-i",
+                    "--input",
                     dest="input",
                     default=sys.stdin,
                     help="Input file in $1 format. Defaults to sys.stdin.")
-parser.add_argument("--output",
+parser.add_argument("-o",
+                    "--output",
                     dest="output",
                     default=sys.stdout,
                     help="Output file in $2 format. Defaults to sys.stdout.")
