@@ -11,6 +11,7 @@ __license__ = "%LICENSE%"
 # imports
 import sys
 import time
+import errno
 from contextlib import contextmanager
 from argparse import ArgumentParser, RawTextHelpFormatter
 
@@ -106,7 +107,7 @@ def smart_open(filepath, mode='r'):
             if fh is not sys.stdout:
                 fh.close()
     else:
-        raise NoSuchModeException("No mode %s for file" % mode)
+        raise Exception("No mode %s for file" % mode)
 
 
 if __name__ == '__main__':
