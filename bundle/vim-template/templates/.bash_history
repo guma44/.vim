@@ -50,3 +50,7 @@ vim sdlkfjs-pipe.py
 vim rg-dupa.py
 qstat
 cd ~/snoRNAs/hybridSearch/Dominik/Analysis/HITS_CLIP_Fibrillarin_N1E_115_test
+lk
+git status
+vim rg_dupa.py
+git push

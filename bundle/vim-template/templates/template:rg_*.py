@@ -23,7 +23,7 @@ parser.add_argument("-v",
                     help="Be loud!")
 
 
-# redefine a functions for writing to stdout and stderr to save some writting
+# redefine a functions for writing to stdout and stderr to save some writing
 syserr = sys.stderr.write
 sysout = sys.stdout.write
 
@@ -33,9 +33,6 @@ def main(options):
     pass
 
 
-# this function is also defined in utils but I put it here to avoid
-# unnecessary module import that might not be available everywhere as
-# it is my own module
 @contextmanager
 def smart_open(filepath, mode='r'):
     """Open file intelligently depending on the source
