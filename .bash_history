@@ -103,3 +103,78 @@ git commit -am "F9 for paste switch
 cd bundle/vim-template/
 git status
 cd bundle/
+git status
+git add bundle/vim-template/templates/
+git status
+git commit -m "Spelling correction"
+vim bundle/vim-template/templates/template:rg_\*py
+vim bundle/vim-template/templates/template:rg_\*.py
+vim rg_test_colors.py
+python rg_test_colors.py -v
+vim rg_test_colors.py
+python rg_test_colors.py -v
+vim rg_test_colors.py
+python rg_test_colors.py -v
+vim rg_test_colors.py
+python rg_test_colors.py -v
+vim rg_test_colors.py
+:q
+vim rg_test_colors.py
+python rg_test_colors.py -v
+vim rg_test_colors.py
+python rg_test_colors.py -v
+vim rg_test_colors.py
+python rg_test_colors.py -v
+vim bundle/vim-template/templates/template:rg_\*.py
+git status
+vim UltiSnips/python.snippets
+git add UltiSnips/python.snippets
+#git commit -m "One letter arguments for "
+vim rg_dupa.py
+ipython
+vim UltiSnips/python.snippets
+vim rg_dupa.py
+vim UltiSnips/python.snippets
+vim rg_dupa.py
+vim UltiSnips/python.snippets
+vim rg_dupa.py
+rm -rf rg_dupa.py 
+git add UltiSnips/python.snippets
+git status
+git commit -m "One letter arguments for python"
+git status
+git add bundle/vim-template/templates/
+git add .
+git status
+git unstash rg_test_colors.py
+git reset rg_test_colors.py
+git status
+git commit -m "Terminal colors for python scripts"
+git push
+git status
+rm -rf rg_test_colors.py 
+git push origin master
+git origin
+git remote -v
+git remote set-url https://github.com/guma44/.vim.git
+git remote set-url origin https://github.com/guma44/.vim.git
+git push
+git remote -v
+git fetch
+git push
+git push origin master
+vim .git/config
+git push origin master
+ssh -T git@github.com
+vim .git/config
+git remote rm origin
+vim .git/config
+git remote add origin git@github.com:guma44/.vim.git
+git push origin master
+git remote rm origin
+git remote add origin https://github.com/guma44/.vim.git
+git push origin master
+git remote rm origin
+git remote add origin https://guma44@github.com/guma44/.vim.git
+git push origin master
+cd ~/Projects/SWISS-MODEL/swissmodel/pmp/solr/
