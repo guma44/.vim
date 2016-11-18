@@ -54,3 +54,11 @@ lk
 git status
 vim rg_dupa.py
 git push
+ls
+vim template:rg_\*.py
+git status
+git add .
+git status
+cd ../../../../
+cd .
+cd ../../../

@@ -16,60 +16,23 @@ from contextlib import contextmanager
 from argparse import ArgumentParser, RawTextHelpFormatter
 
 parser = ArgumentParser(description=__doc__, formatter_class=RawTextHelpFormatter)
+
 parser.add_argument("-v",
-                    "--verbose",
-                    dest="verbose",
-                    action="store_true",
-                    default=False,
-                    help="Be loud!")
+                    "--verbosity",
+                    dest="verbosity",
+                    choices=('DEBUG', 'INFO', 'WARN', 'ERROR', 'CRITICAL'),
+                    default='ERROR',
+                    help="Verbosity/Log level. Defaults to ERROR")
+parser.add_argument("-l",
+                    "--logfile",
+                    dest="logfile",
+                    help="Store log to this file.")
 
-
-# define colors for the terminal
-colors = {"native": '\033[m',
-          "red": '\033[0;31m',          # Red
-          "green": '\033[0;32m',        # Green
-          "yellow": '\033[0;33m',       # Yellow
-          "blue": '\033[0;34m',         # Blue
-          "purple": '\033[0;35m',       # Purple
-          "cyan": '\033[0;36m',         # Cyan
-          "white": '\033[0;37m',        # White
-          "bred": '\033[1;31m',         # Bold Red
-          "bgreen": '\033[1;32m',       # Bold Green
-          "byellow": '\033[1;33m',      # Bold Yellow
-          "bblue": '\033[1;34m',        # Bold Blue
-          "bpurple": '\033[1;35m',      # Bold Purple
-          "bcyan": '\033[1;36m',        # Bold Cyan
-          "bwhite": '\033[1;37m',       # Bold White
-}
-
-# redefine a functions for writing to stdout and stderr to save some writing
-syserr = sys.stderr.write
-sysout = sys.stdout.write
 
 
 def main(options):
     """Main logic of the script"""
     pass
-
-
-def infolog(text, color=colors['bwhite']):
-    """Log info"""
-    syserr(color + text + colors['native'])
-
-
-def errorlog(text, color=colors['bred']):
-    """Log error"""
-    syserr(color + text + colors['native'])
-
-
-def successlog(text, color=colors['bgreen']):
-    """Log success"""
-    syserr(color + text + colors['native'])
-
-
-def warninglog(text, color=colors['byellow']):
-    """Log success"""
-    syserr(color + text + colors['native'])
 
 
 @contextmanager
@@ -117,17 +80,51 @@ if __name__ == '__main__':
         except Exception, e:
             parser.print_help()
             sys.exit()
-        if options.verbose:
-            start_time = time.time()
-            start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
-            infolog("############## Started script on %s ##############\n" %
-                   start_date)
-        main(options)
-        if options.verbose:
-            infolog("### Successfully finished in %i seconds, on %s ###\n" %
-                   (time.time() - start_time,
-                    time.strftime("%d-%m-%Y at %H:%M:%S")))
-    except KeyboardInterrupt:
-        errorlog("Interrupted by user after %i seconds!\n" %
-               (time.time() - start_time))
+        #
+        ########################################################################
+        # Set up logging
+        ########################################################################
+        #
+        formatter = logging.Formatter(fmt="[%(asctime)s] %(levelname)s - %(message)s",
+                                      datefmt="%d-%b-%Y %H:%M:%S")
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(formatter)
+        logger = logging.getLogger('uniprot_to_json')
+        logger.setLevel(logging.getLevelName(options.verbosity))
+        logger.addHandler(console_handler)
+        if options.logfile is not None:
+            logfile_handler = logging.handlers.RotatingFileHandler(options.logfile, maxBytes=50000, backupCount=2)
+            logfile_handler.setFormatter(formatter)
+            logger.addHandler(logfile_handler)
+        #
+        ########################################################################
+        #
+        start_time = time.time()
+        start_date = time.strftime("%d-%m-%Y at %H:%M:%S")
+        #
+        ########################################################################
+        # Run main
+        ########################################################################
+        #
+        logger.info("Starting script")
+        main(options, logger)
+        #
+        ########################################################################
+        seconds = time.time() - start_time
+        minutes, seconds = divmod(seconds, 60)
+        hours, minutes = divmod(minutes, 60)
+        logger.info("Successfully finished in {hours} hour(s) {minutes} minute(s) and {seconds} second(s)".format(
+            hours=int(hours),
+            minutes=int(minutes),
+            seconds=int(seconds) if seconds > 1.0 else 1
+        ))
+    except KeyboardInterrupt as e:
+        logger.warn("Interrupted by user after {hours} hour(s) {minutes} minute(s) and {seconds} second(s)".format(
+            hours=int(hours),
+            minutes=int(minutes),
+            seconds=int(seconds) if seconds > 1.0 else 1
+        ))
         sys.exit(-1)
+    except Exception as e:
+        logger.exception(str(e))
+        raise e

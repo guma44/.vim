@@ -178,3 +178,17 @@ git remote rm origin
 git remote add origin https://guma44@github.com/guma44/.vim.git
 git push origin master
 cd ~/Projects/SWISS-MODEL/swissmodel/pmp/solr/
+vim bundle/vim-template/templates/template:rg_\*.py
+git status
+git add .
+git  commit -m "Bugfix in colors"
+git push origin master
+vim bundle/vim-template/templates/template:rg_\*.py
+git status
+git add .
+git commit -m "Bugfix: exceptions in the smart_open"
+git push
+cd ~/Projects/SWISS-MODEL/swissmodel/pmp/solr
+ls
+git status
+cd ~/Projects/CAMEO/dataViews/
