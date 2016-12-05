@@ -12,6 +12,7 @@ __license__ = "%LICENSE%"
 import sys
 import time
 import errno
+import logging
 from contextlib import contextmanager
 from argparse import ArgumentParser, RawTextHelpFormatter
 
