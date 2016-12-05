@@ -30,7 +30,7 @@ parser.add_argument("-l",
 
 
 
-def main(options):
+def main(options, logger):
     """Main logic of the script"""
     pass
 

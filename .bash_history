@@ -192,3 +192,19 @@ cd ~/Projects/SWISS-MODEL/swissmodel/pmp/solr
 ls
 git status
 cd ~/Projects/CAMEO/dataViews/
+ls
+git status
+git add .
+git status
+git commit -m "feat: Replaced printing with logging module"
+git push
+ls
+vim vimrc 
+git status
+git add .
+#git commit -m "fix: E-mail and Name should not be present"
+ls
+vim README.md 
+git status
+git commit -m "fix: E-mail and Name not anymore present in the vimrc"
+git push
