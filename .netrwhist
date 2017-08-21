@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/scicore/home/zavolan/gumiennr/PythonModules/MetaProfile/MetaProfile'
-let g:netrw_dirhist_2='/scicore/home/schwede/gumiennr/Projects/CAMEO/mmCIF'
-let g:netrw_dirhist_3='/scicore/home/schwede/gumiennr/Projects/CAMEO/CAMEO_backend/PYMODULES/pdbx'
-let g:netrw_dirhist_4='/scicore/home/schwede/gumiennr/Projects/CAMEO/CAMEO_backend/PYMODULES/pdbx/reader'

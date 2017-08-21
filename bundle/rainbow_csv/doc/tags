@@ -1,0 +1,11 @@
+'disable_rainbow_csv_autodetect'	rainbow_csv.txt	/*'disable_rainbow_csv_autodetect'*
+'rainbow_csv-commands'	rainbow_csv.txt	/*'rainbow_csv-commands'*
+'rainbow_csv-configuration'	rainbow_csv.txt	/*'rainbow_csv-configuration'*
+'rcsv_colorpairs'	rainbow_csv.txt	/*'rcsv_colorpairs'*
+'rcsv_delimiters'	rainbow_csv.txt	/*'rcsv_delimiters'*
+'rcsv_max_columns'	rainbow_csv.txt	/*'rcsv_max_columns'*
+NoRainbowDelim	rainbow_csv.txt	/*NoRainbowDelim*
+RainbowDelim	rainbow_csv.txt	/*RainbowDelim*
+rainbow_csv	rainbow_csv.txt	/*rainbow_csv*
+rainbow_csv-contents	rainbow_csv.txt	/*rainbow_csv-contents*
+rainbow_csv.txt	rainbow_csv.txt	/*rainbow_csv.txt*
