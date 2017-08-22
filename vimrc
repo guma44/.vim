@@ -65,6 +65,7 @@ colorscheme monokai
 set cursorline                  " Highlight current line
 set showmode
 highlight clear SignColumn      " SignColumn should match background
+highlight Pmenu guibg=brown gui=bold
 " highlight clear LineNr          " Current line number row will have same background color in relative mode
 let g:CSApprox_hook_post = ['hi clear SignColumn']
 
