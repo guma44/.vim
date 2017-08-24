@@ -59,8 +59,9 @@ endif
 
 
 " set solarized monokai
-set t_Co=256
-colorscheme monokai
+let g:neodark#background='#202020'
+colorscheme neodark
+
 
 set cursorline                  " Highlight current line
 set showmode
