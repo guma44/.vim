@@ -57,10 +57,13 @@ if has("autocmd")
    augroup END
 endif
 
-
-" set solarized monokai
-let g:neodark#background='#202020'
-colorscheme neodark
+if v:version < 800
+	let g:neodark#background='#202020'
+	colorscheme neodark
+else
+	set termguicolors
+	colorscheme monokai
+endif
 
 
 set cursorline                  " Highlight current line
