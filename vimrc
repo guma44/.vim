@@ -94,7 +94,7 @@ endif
 
 set linespace=0                 " No extra spaces between rows
 set number                      " Line numbers on
-set relativenumber              " Relative line numbers
+" set relativenumber              " Relative line numbers
 set showmatch                   " Show matching brackets/parenthesis
 set incsearch                   " Find as you type search
 set hlsearch                    " Highlight search terms
