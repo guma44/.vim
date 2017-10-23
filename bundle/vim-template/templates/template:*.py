@@ -18,11 +18,6 @@ from contextlib import contextmanager
 from argparse import ArgumentParser, RawTextHelpFormatter
 
 
-def main(options, logger):
-    """Main logic of the script"""
-    pass
-
-
 def parse_options():
     parser = ArgumentParser(
         description=__doc__,
@@ -47,6 +42,11 @@ def parse_options():
     #######################################################################
     #
     return parser, parser.parse_args()
+
+
+def main(options, logger):
+    """Main logic of the script"""
+    pass
 
 
 @contextmanager
