@@ -13,6 +13,7 @@ import sys
 import time
 import errno
 import logging
+from logging import handlers
 from contextlib import contextmanager
 from argparse import ArgumentParser, RawTextHelpFormatter
 
@@ -107,7 +108,7 @@ if __name__ == '__main__':
         logger.setLevel(logging.getLevelName(options.verbosity))
         logger.addHandler(console_handler)
         if options.logfile is not None:
-            logfile_handler = logging.handlers.RotatingFileHandler(
+            logfile_handler = handlers.RotatingFileHandler(
                 options.logfile,
                 maxBytes=50000,
                 backupCount=2)
