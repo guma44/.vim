@@ -588,59 +588,66 @@ if options.verbose:
 endsnippet
 
 snippet adds "Add string argument to parser" b
-parser.add_argument("-`!p snip.rv = get_first_letter(t[1])`",
-                    "--$1",
-                    dest="`!p snip.rv = t[1].replace("-", "_")`",
-                    required=True,
-                    help="$2")
+parser.add_argument(
+    "-`!p snip.rv = get_first_letter(t[1])`",
+    "--$1",
+    dest="`!p snip.rv = t[1].replace("-", "_")`",
+    required=True,
+    help=("$2"))
 endsnippet
 
 snippet addsd "Add string with default argument to parser" b
-parser.add_argument("-`!p snip.rv = get_first_letter(t[1])`",
-                    "--$1",
-                    dest="`!p snip.rv = t[1].replace("-", "_")`",
-                    default="$2",
-                    help="$3 , defaults to $2")
+parser.add_argument(
+    "-`!p snip.rv = get_first_letter(t[1])`",
+    "--$1",
+    dest="`!p snip.rv = t[1].replace("-", "_")`",
+    default="$2",
+    help=("$3 , defaults to $2"))
 endsnippet
 
 snippet addi "Add int argument to parser" b
-parser.add_argument("-`!p snip.rv = get_first_letter(t[1])`",
-                    "--$1",
-                    dest="`!p snip.rv = t[1].replace("-", "_")`",
-                    type=int,
-                    required=True,
-                    help="$2")
+parser.add_argument(
+    "-`!p snip.rv = get_first_letter(t[1])`",
+    "--$1",
+    dest="`!p snip.rv = t[1].replace("-", "_")`",
+    type=int,
+    required=True,
+    help=("$2"))
 endsnippet
 
 snippet addid "Add int with default argument to parser" b
-parser.add_argument("-`!p snip.rv = get_first_letter(t[1])`",
-                    "--$1",
-                    dest="`!p snip.rv = t[1].replace("-", "_")`",
-                    type=int,
-                    default=$2,
-                    help="$3, defaults to $2")
+parser.add_argument(
+    "-`!p snip.rv = get_first_letter(t[1])`",
+    "--$1",
+    dest="`!p snip.rv = t[1].replace("-", "_")`",
+    type=int,
+    default=$2,
+    help=("$3, defaults to $2"))
 endsnippet
 
 snippet addb "Add boolean switch to parser" b
-parser.add_argument("-`!p snip.rv = get_first_letter(t[1])`",
-                    "--$1",
-                    dest="`!p snip.rv = t[1].replace("-", "_")`",
-                    action="store_true",
-                    default=False,
-                    help="$2")
+parser.add_argument(
+    "-`!p snip.rv = get_first_letter(t[1])`",
+    "--$1",
+    dest="`!p snip.rv = t[1].replace("-", "_")`",
+    action="store_true",
+    default=False,
+    help=("$2"))
 endsnippet
 
 snippet inout "Insert input and output arguments" b
-parser.add_argument("-i",
-                    "--input",
-                    dest="input",
-                    default=sys.stdin,
-                    help="Input file in $1 format. Defaults to sys.stdin.")
-parser.add_argument("-o",
-                    "--output",
-                    dest="output",
-                    default=sys.stdout,
-                    help="Output file in $2 format. Defaults to sys.stdout.")
+parser.add_argument(
+    "-i",
+    "--input",
+    dest="input",
+    default=sys.stdin,
+    help="Input file in $1 format. Defaults to sys.stdin.")
+parser.add_argument(
+    "-o",
+    "--output",
+    dest="output",
+    default=sys.stdout,
+    help="Output file in $2 format. Defaults to sys.stdout.")
 endsnippet
 
 snippet pipecode "Insert piping code" b
