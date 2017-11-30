@@ -89,11 +89,7 @@ def smart_open(filepath, mode='r'):
 
 if __name__ == '__main__':
     try:
-        try:
-            parser, options = parse_options()
-        except Exception, e:
-            parser.print_help()
-            sys.exit()
+        parser, options = parse_options()
         #
         #######################################################################
         # Set up logging
@@ -145,6 +141,5 @@ if __name__ == '__main__':
             seconds=int(seconds) if seconds > 1.0 else 1
         ))
         sys.exit(-1)
-    except Exception as e:
-        logger.exception(str(e))
-        raise e
+    except:
+        raise
