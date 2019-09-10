@@ -3,3 +3,5 @@
 *.swp
 .netrwhist
 .bash_history
+/autoload
+/plugged

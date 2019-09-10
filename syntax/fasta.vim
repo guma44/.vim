@@ -11,7 +11,7 @@ endif
 syn region id	start=/^>/ end=/\n/
 syn region entry	start=/^[A-Za-z\-]/ end=/\n/
 
-highlight link id		PreProc
-highlight link entry		Identifier
+highlight link id		Keyword
+highlight link entry		String
 syn case ignore
 let b:current_syntax = "fasta"

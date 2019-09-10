@@ -12,7 +12,7 @@ ln -s .vim/vimrc .vimrc
 
 ### make  backup directory ###
 
-mkdir ~/tmp
+mkdir ~/.vimbackup
 mkdir ~/.vimundo
 
 ### Don't forget to change the info for the templates in ~/.vim/vimrc ###
